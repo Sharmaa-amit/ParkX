@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ParkX</string>
+    <string name="splashscreen_title">ParkX</string>
 </resources>
