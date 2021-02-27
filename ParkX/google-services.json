@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "696527592499",
+    "firebase_url": "https://parkx-81b28-default-rtdb.firebaseio.com",
+    "project_id": "parkx-81b28",
+    "storage_bucket": "parkx-81b28.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:696527592499:android:d46a46815d53e2046a1746",
+        "android_client_info": {
+          "package_name": "com.parkx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "696527592499-9019pn9hrromv1fb0r7dt3kft856rank.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdYpQAar9JYoJlWp03Z_NmpYAWWKs5wVQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "696527592499-9019pn9hrromv1fb0r7dt3kft856rank.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
