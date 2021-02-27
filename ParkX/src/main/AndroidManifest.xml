@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ParkingLotActivity" />
+        <activity
+            android:name=".ParkingLotActivity"
+            android:screenOrientation="sensor" />
         <activity
             android:name=".SplashScreenActivity"
             android:screenOrientation="sensor">
