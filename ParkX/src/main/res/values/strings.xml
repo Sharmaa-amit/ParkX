@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">ParkX</string>
-    <string name="splashscreen_title">ParkX</string>
 
     <!-- ParkingLotActivity -->
     <string name="parkinglot_available">Spots Available</string>
