@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">ParkX</string>
+    <string name="app_name" translatable="false">ParkX</string>
 
     <!-- ParkingLotActivity -->
     <string name="parkinglot_available">Spots Available</string>
     <string name="parkinglot_help">Alert for help</string>
     <string name="parkinglot_title">Parking Lot</string>
     <string name="parkinglot_helpmessage">Help is on the way!</string>
-    <string name="parkinglot_childspots">spots</string>
+    <string name="parkinglot_childspots" translatable="false">spots</string>
     <string name="parkinglot_dialogbackmessage">Sure you wish to exit?</string>
     <string name="parkinglot_dialogpositive">Yes</string>
     <string name="parkinglot_dialognegative">No</string>
