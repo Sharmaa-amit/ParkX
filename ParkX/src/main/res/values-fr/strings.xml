@@ -2,9 +2,9 @@
 <resources>
     <!-- ParkingLotActivity -->
     <string name="parkinglot_available">Spots disponibles</string>
-    <string name="parkinglot_help">Alerte à l\'aide</string>
+    <string name="parkinglot_help">Buzzer d\'alerte pour obtenir de l\'aide</string>
     <string name="parkinglot_title">Terrain de stationnement</string>
-    <string name="parkinglot_helpmessage">L\'aide est en route!</string>
+    <string name="parkinglot_helpmessage">Le buzzer a retenti, l\'aide est en route!</string>
     <string name="parkinglot_dialogbackmessage">Bien sûr que vous souhaitez quitter?</string>
     <string name="parkinglot_dialogpositive">Oui</string>
     <string name="parkinglot_dialognegative">Non</string>
