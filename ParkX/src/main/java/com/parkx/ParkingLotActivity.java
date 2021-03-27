@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 public class ParkingLotActivity extends AppCompatActivity {
 
     private FirebaseDatabase database;
+    private DatabaseReference ref;
     TextView tvSpots;
 
     @Override
@@ -33,11 +35,12 @@ public class ParkingLotActivity extends AppCompatActivity {
         Button btnHelp = findViewById(R.id.btnHelp);
         btnHelp.setOnClickListener(v -> {
             Toast.makeText(ParkingLotActivity.this, getString(R.string.parkinglot_helpmessage), Toast.LENGTH_SHORT).show();
+            soundBuzzer();
         });
     }
 
     public void loadSpots() {
-        DatabaseReference ref = database.getReference().child(getString(R.string.parkinglot_childspots));
+        ref = database.getReference().child(getString(R.string.parkinglot_childspots));
 
         ref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -49,6 +52,15 @@ public class ParkingLotActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
             }
         });
+    }
+
+    public void soundBuzzer() {
+        ref = database.getReference().child("buzzer");
+        ref.setValue("true");
+
+        new Handler().postDelayed(() -> {
+            ref.setValue("false");
+        }, 5000);
     }
 
     @Override
