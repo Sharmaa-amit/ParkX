@@ -55,11 +55,11 @@ public class ParkingLotActivity extends AppCompatActivity {
     }
 
     public void soundBuzzer() {
-        ref = database.getReference().child("buzzer");
-        ref.setValue("true");
+        ref = database.getReference().child(getString(R.string.parkinglog_childbuzzer));
+        ref.setValue(getString(R.string.parkinglot_true));
 
         new Handler().postDelayed(() -> {
-            ref.setValue("false");
+            ref.setValue(getString(R.string.parkinglot_false));
         }, 5000);
     }
 
