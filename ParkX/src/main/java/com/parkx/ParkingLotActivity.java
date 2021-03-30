@@ -21,6 +21,7 @@ public class ParkingLotActivity extends AppCompatActivity {
     private FirebaseDatabase database;
     private DatabaseReference ref;
     TextView tvSpots;
+    String vehicle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +32,10 @@ public class ParkingLotActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         tvSpots = findViewById(R.id.tvSpots);
         loadSpots();
+        loadVehicle();
 
         Button btnHelp = findViewById(R.id.btnHelp);
-        btnHelp.setOnClickListener(v -> {
-            Toast.makeText(ParkingLotActivity.this, getString(R.string.parkinglot_helpmessage), Toast.LENGTH_SHORT).show();
-            soundBuzzer();
-        });
+        btnHelp.setOnClickListener(v -> soundBuzzer(vehicle));
     }
 
     public void loadSpots() {
@@ -54,13 +53,30 @@ public class ParkingLotActivity extends AppCompatActivity {
         });
     }
 
-    public void soundBuzzer() {
-        ref = database.getReference().child(getString(R.string.parkinglog_childbuzzer));
-        ref.setValue(getString(R.string.parkinglot_true));
+    public void loadVehicle() {
+        ref = database.getReference().child("vehicle");
 
-        new Handler().postDelayed(() -> {
-            ref.setValue(getString(R.string.parkinglot_false));
-        }, 5000);
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                vehicle = snapshot.getValue().toString();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+    }
+
+    public void soundBuzzer(String vehicleValue) {
+        if (vehicleValue.equals(getString(R.string.parkinglot_true))) {
+            Toast.makeText(ParkingLotActivity.this, getString(R.string.parkinglot_helpmessage), Toast.LENGTH_SHORT).show();
+            ref = database.getReference().child(getString(R.string.parkinglog_childbuzzer));
+            ref.setValue(getString(R.string.parkinglot_true));
+
+            new Handler().postDelayed(() -> ref.setValue(getString(R.string.parkinglot_false)), 5000);
+        } else
+            Toast.makeText(ParkingLotActivity.this, "Too far to sound buzzer!", Toast.LENGTH_SHORT).show();
     }
 
     @Override
