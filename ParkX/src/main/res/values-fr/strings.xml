@@ -5,6 +5,7 @@
     <string name="parkinglot_help">Buzzer d\'alerte pour obtenir de l\'aide</string>
     <string name="parkinglot_title">Terrain de stationnement</string>
     <string name="parkinglot_helpmessage">Le buzzer a retenti, l\'aide est en route!</string>
+    <string name="parkinglot_message">Trop loin pour faire sonner le buzzer!</string>
     <string name="parkinglot_dialogbackmessage">Bien sûr que vous souhaitez quitter?</string>
     <string name="parkinglot_dialogpositive">Oui</string>
     <string name="parkinglot_dialognegative">Non</string>

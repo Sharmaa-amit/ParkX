@@ -54,7 +54,7 @@ public class ParkingLotActivity extends AppCompatActivity {
     }
 
     public void loadVehicle() {
-        ref = database.getReference().child("vehicle");
+        ref = database.getReference().child(getString(R.string.parkinglot_childvehicle));
 
         ref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -76,7 +76,7 @@ public class ParkingLotActivity extends AppCompatActivity {
 
             new Handler().postDelayed(() -> ref.setValue(getString(R.string.parkinglot_false)), 5000);
         } else
-            Toast.makeText(ParkingLotActivity.this, "Too far to sound buzzer!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ParkingLotActivity.this, getString(R.string.parkinglot_message), Toast.LENGTH_SHORT).show();
     }
 
     @Override

@@ -7,9 +7,11 @@
     <string name="parkinglot_title">Parking Lot</string>
     <string name="parkinglot_helpmessage">Buzzer sounded, help is on the way!</string>
     <string name="parkinglot_childspots" translatable="false">spots</string>
+    <string name="parkinglot_childvehicle" translatable="false">vehicle</string>
     <string name="parkinglog_childbuzzer" translatable="false">buzzer</string>
     <string name="parkinglot_true" translatable="false">true</string>
     <string name="parkinglot_false" translatable="false">false</string>
+    <string name="parkinglot_message">Too far to sound buzzer!</string>
     <string name="parkinglot_dialogbackmessage">Sure you wish to exit?</string>
     <string name="parkinglot_dialogpositive">Yes</string>
     <string name="parkinglot_dialognegative">No</string>
